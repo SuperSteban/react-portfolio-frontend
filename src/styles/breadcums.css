@@ -1,0 +1,26 @@
+.breadcrumbs {
+    display: flex;
+    list-style: none;
+    padding: .2rem;
+}
+
+.breadcrumbs li {
+    margin-right: .4rem;
+}
+
+.breadcrumbs li a {
+    text-decoration: none;
+    color: white;
+}
+.breadcrumbs li a:hover {
+    color: blueviolet;
+}
+
+.breadcrumbs li::after {
+    content: " > ";
+    margin-left: .5rem;
+}
+
+.breadcrumbs li:last-child::after {
+    content: "";
+}
