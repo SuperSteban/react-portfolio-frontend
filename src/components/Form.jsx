@@ -3,6 +3,8 @@ import api from "../api";
 import { useNavigate} from "react-router-dom";
 import { ACCESS_TOKEN, REFRESH_TOKEN } from "../constansts";
 import "../styles/Form.css"
+import "../styles/login.css"
+import { FaUserAlt } from "react-icons/fa";
 
 function Form({route, method}) {
     const [username, setUsername] = useState("")
@@ -20,7 +22,7 @@ function Form({route, method}) {
             const res = await api.post(route, {username, password})
             if (method === "login") {
                 localStorage.setItem(ACCESS_TOKEN, res.data.access)
-                localStorage.setItem(REFRESH_TOKEN, res.data.access)
+                localStorage.setItem(REFRESH_TOKEN, res.data.refresh)
                 navigate("/admin-site")
             }else {
                 navigate("/login")
@@ -33,34 +35,35 @@ function Form({route, method}) {
         }
     }
     const name = method === "login" ? "Login" : "Register"
-    return <>
+    return (
+        <div className="login__container">
+            <form  onSubmit={handleSubmit} className="login">
+                <FaUserAlt size={45} />
+                <h2>{name}</h2>
+                <input
+                    type="text"
+                    value={username}
+                    onChange={(e)=>setUsername(e.target.value)}
+                    placeholder="username"
+                />
 
-        <form onSubmit={handleSubmit} className="form-container">
-            <h3>{name}</h3>
-            <input
-                className="form-input"
-                type="text"
-                value={username}
-                onChange={(e)=>setUsername(e.target.value)}
-                placeholder="username"
-            />
+                <input
+                    type="password"
+                    className="#password"
+                    value={password}
+                    onChange={(e)=>setPassword(e.target.value)}
+                    placeholder="password"
+                />
+                <button
+                    type="submit"
+                    >
+                    {name}
+                </button>
+            </form>
+        </div>
 
-            <input
-                className="form-input"
-                type="password"
-                value={password}
-                onChange={(e)=>setPassword(e.target.value)}
-                placeholder="username"
-            />
-            <button
-                className="form-button"
-                type="submit"
-                >
-                {name}
-            </button>
-        </form>
-    </>
-    
+    )
+
     
 }
 

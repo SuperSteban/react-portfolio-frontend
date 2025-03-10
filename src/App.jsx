@@ -6,11 +6,11 @@ import MySite from './pages/admin/Home'
 import ProtectedRoute from './components/ProtectedRoute'
 import ProjectList from './components/ProjectList'
 import BlogList from './components/BlogList'
-import Layout from './components/Layout'
 import PublicBlogs from './pages/Blog'
 import PublicProjecs from './pages/Projects'
 import SiteLayout from './Layouts/SiteLayout'
 import AboutMe from './pages/About'
+import SearchList from './pages/SearchedList'
 
 
 
@@ -22,7 +22,8 @@ const router = createBrowserRouter([
       {path:"", element:<Home/>},
       {path:"projects", element:<PublicProjecs/>},
       {path:"blogs", element:<PublicBlogs/>},
-      {path:"about", element:<AboutMe/>}
+      {path:"about", element:<AboutMe/>},
+      {path:`search`, element:<SearchList />}
 
     ],
   },
@@ -43,7 +44,7 @@ const router = createBrowserRouter([
     element: <ProtectedRoute><BlogList /></ProtectedRoute>,
   },
   {
-    path: "*", // Ruta para manejar páginas no encontradas
+    path: "*", 
     element: <NotFound />,
   },
 ]);

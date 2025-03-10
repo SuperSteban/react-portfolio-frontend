@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
+import NavBar from "./NavBar";
 import api from "../api";
 import BlogItem from "./Blog";
+import "../styles/login.css"
 
 function BlogList() {
     
@@ -20,7 +22,7 @@ function BlogList() {
             .catch((err) => alert(err))
     }
     const deleteBlog = (id) => {
-        api.delete(`/api/projects/${id}/`)
+        api.delete(`/api/blogs/${id}/`)
         .then((res) => {
             if (res.status == 204) {
                  alert("Projecto Borrado")
@@ -52,8 +54,9 @@ function BlogList() {
     }
 
     return (
-        <div>
-            <div>
+        <div className="container">
+            <NavBar></NavBar>
+            <div className="container-section">
                 <h3>BlogList</h3>
                 {
                     blogs.map((item) => (
@@ -63,9 +66,9 @@ function BlogList() {
 
             </div>
             <div>
-                <h3>Create Blog</h3>
+                <h4>Create Blog</h4>
 
-                <form onSubmit={createBlog}>
+                <form onSubmit={createBlog} className="login">
                     <label htmlFor="title">Titulo</label>
                     <input 
                         type="text" 

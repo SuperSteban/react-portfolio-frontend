@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react"
 import ProjectItem from "./Project"
+import NavBar from "./NavBar"
 import api from "../api"
+import "../styles/projects.css"
+import "../styles/login.css"
+
 
 function ProjectList() {
     
@@ -57,27 +61,32 @@ function ProjectList() {
     }
     return (
 
-        <div>
-            <div>
+        <div className="container">
+            <NavBar></NavBar>
+            <div className="">
                 <h2>Projects List</h2>
             </div>
-            <div>
 
-            { 
-                projects.map( (item) => (
-                        <ProjectItem item={item} onDelete={deleteProject} key={item.id}></ProjectItem>
-    
+            <div className="">
 
-                ))
-            }
+                <div className="projects__container--admin">
+
+                { 
+                    projects.map( (item) => (
+                            <div className="">
+                                <ProjectItem item={item} onDelete={deleteProject} key={item.id}  ></ProjectItem>
+                            </div>  
+                    ))
+                }
+                </div>
             </div>
 
             <div>
-                <h2>
+                <h4>
                     Project Create
-                </h2>
+                </h4>
                 <div>
-                    <form onSubmit={createProject} >
+                    <form onSubmit={createProject} className="login" >
                         <label htmlFor="title">Title:</label>
                     
                         <input 

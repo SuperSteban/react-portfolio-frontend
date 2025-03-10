@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
+import api from "../api";
+
 import Breadcrumbs from "../components/BreadCumbs"
-import BlogItem from "../components/Blog"
+import "../styles/blog.css"
+import { ImOpt } from "react-icons/im"
 
 function PublicBlogs() {
 
@@ -28,27 +31,27 @@ function PublicBlogs() {
 
 
     return (
-        <div className="container">
-            <h1>Blogs</h1>
+        <div className="">
+            <h2>Blogs</h2>
             <Breadcrumbs></Breadcrumbs>
-            <div>
+            <div className="">
 
 
                 {
                     blogs.length < 0 ? (
                         <p>no hay</p>
                     ) : (
-                        <div>
+                        <div className="blog__container">
                             {
                                 
                                 blogs.map((item) =>
 
                                 (
-                                    <div key={item.id}>
-                                        <h3>{item.title}</h3>
+                                    <div key={item.id} className="blog">
+                                        <h4>{item.title}</h4>
                                         <img src={item.img} alt={item.title} />
                                         <p>{item.description}</p>
-                                        <span>fecha: {new Date(item.created_at).toLocaleDateString("en-US")}</span>
+                                        <span><p>{new Date(item.created_at).toLocaleDateString("en-US")}</p></span>
                                     </div>
                                 )
 

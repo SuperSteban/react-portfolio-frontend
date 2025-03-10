@@ -1,0 +1,55 @@
+
+.container {
+    padding: 0rem;
+    border: 1rem solid greenyellow;
+
+}
+h1 {
+    font-size: 5rem;
+
+}
+h2 {
+    font-size: 4rem;
+}
+h3 {
+    font-size: 3.5rem;
+}
+
+h4 {
+    font-size: 2.5rem;
+}
+p {
+    font-size: 2rem;
+}
+
+@media only screen and (min-width:600px) {
+    .container {
+        width: 100%;
+        margin-left: 5rem;
+        margin-right: 5rem;
+    }
+    .section {
+        padding: 2rem 2rem;
+        margin-bottom: 5rem;
+    }
+
+
+
+    h1 {
+        font-size: 8rem;
+    
+    }
+    h2 {
+        font-size: 6rem;
+    }
+    h3 {
+        font-size: 4.5rem;
+    }
+    
+    h4 {
+        font-size: 3.5rem;
+    }
+    p {
+        font-size: 2rem;
+    }
+}

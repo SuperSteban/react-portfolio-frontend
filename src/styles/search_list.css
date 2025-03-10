@@ -1,0 +1,53 @@
+.search_list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: .5rem;
+    padding-right: .5rem;
+}
+.search__item {
+    width: 100%;
+    margin-bottom: 3.5rem;
+    border-bottom: 0.2em solid #2eb8e7;
+}
+
+.search__item:first-child {
+    margin-top: 1rem;
+}
+
+.page_title {
+    padding:0;
+}
+.nothing {
+    padding: 5rem;
+    margin: 3rem;
+
+}
+
+@media only screen and (min-width:600px) {
+    .nothing {
+        padding: 20rem;
+        margin: 10rem;
+    
+    }
+    .search_list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-left: 15rem;
+        padding-right: 15rem;
+    }
+    .search__item {
+        width: 100%;
+        margin-bottom: 5rem;
+        border-bottom: 0.5em solid #2eb8e7;
+    }
+    
+    .search__item:first-child {
+        margin-top: 5rem;
+    }
+    
+    .page_title {
+        padding: 2rem 2rem 3rem 2rem;
+    }
+}

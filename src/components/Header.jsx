@@ -1,27 +1,29 @@
-import { useNavigate, NavLink } from "react-router-dom";
-import { useState, useEffect } from "react";
-import "../styles/navbar.css"
+import { useNavigate, NavLink, Link } from "react-router-dom";
+import SearchBar from "./SearchBar";
+import "../styles/header.css"
 
-function NavBar(nav) {
+import { LuMenu } from "react-icons/lu";
+import { useState } from "react";
+function Header() {
 
-    
+    const [nav, setNav] = useState(false)
+    const [keyword, setKeyword] = useState('');
     const navigate = useNavigate();
-    const [isAuthenticated, setIsAuthenticated] = useState(false);
+  
+ 
 
-    useEffect(() => {
-        const token = localStorage.getItem("ACCESS_TOKEN");
-        setIsAuthenticated(!!token);
-    }, []);
-
-    const logout = () =>{
-        localStorage.clear("ACCESS_TOKEN");
-        localStorage.clear("REFRESH");
-
-    }
-
-    return (
-        <>
-          <div>
+    return <>
+    
+        <header className={nav?"header":["header open"].join(" ")}>
+            <Link to="/">
+                <div className="logo">
+                    
+                    <img className="" src="/logo.svg" alt="logo" />
+                    <p>PORTFOLIO</p>
+                </div>
+            </Link>
+            <SearchBar/>
+            <div className={nav?["nav_active"].join(" ") :"menu"}>
                 <nav className="navbar">
                     <NavLink
                     className={({ isActive, isPending, isTransitioning }) =>
@@ -31,7 +33,7 @@ function NavBar(nav) {
                         ].join(" ")
                     }
                     
-                    to="/admin-site" end>
+                    to="/" end>
                         Home
                     </NavLink>
                     <NavLink
@@ -43,11 +45,10 @@ function NavBar(nav) {
                         ].join(" ")
                     }
                     
-                    to="/admin-site/projects" end>
+                    to="/projects" end>
                         Projects
                     </NavLink>
-                    
-                    <NavLink
+                    <NavLink 
                     className={({ isActive, isPending, isTransitioning }) =>
                         [
                         isPending ? "pending" : "animate: pulse 1s infinite;",
@@ -56,28 +57,32 @@ function NavBar(nav) {
                         ].join(" ")
                     }
                     
-                    to="/admin-site/blogs" end>
-                        Blogs
-                    </NavLink>
-                    <NavLink
-                    onClick={logout}
+                    to="/blogs" end>Blogs</NavLink>
+                    <NavLink to="/about"
                     className={({ isActive, isPending, isTransitioning }) =>
                         [
                         isPending ? "pending" : "animate: pulse 1s infinite;",
-                        isActive ? "" : "",
+                        isActive ? "active__nav" : "",
                         isTransitioning ? "transitioning" : "",
                         ].join(" ")
                     }
                     
-                    to="/login" end>
-                        Logout
-                    </NavLink>
+                    >About</NavLink>
                 </nav>
             </div>
-            
-            
-        </>
-    )
+
+            <LuMenu onClick={()=>{setNav(!nav); console.log(nav)}} size={35} className="menu__icon"/>
+        </header>
+    
+    </>
+
+
+
+
+    
+    
+    
+
 }
 
-export default NavBar
+export default Header

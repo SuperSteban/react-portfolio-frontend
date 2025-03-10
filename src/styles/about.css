@@ -1,6 +1,199 @@
 .container {
     width: 100%;
     max-width: 60em;
-    display: flex;
-    flex-direction: column;
 }
+
+.mepeneje {
+    width: 100%;
+    height: auto;
+    max-width: 40rem;
+    border-radius: 2rem;
+}
+.content {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+    gap: 1rem;
+}
+.mepeneje img {
+
+    max-width: 30rem;
+    height: auto;
+    object-fit: cover;
+
+}
+
+.mensaje {
+    
+    margin-bottom: 5rem;
+}
+.mensaje p{
+    font-size: 1.8rem;
+}
+
+@media only screen and (min-width: 600px){
+    .container {
+        width: 100%;
+        max-width: 60em;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .mepeneje {
+        width: 100%;
+        height: 40rem;
+        max-width: 40rem;
+        border-radius: 2rem;
+        margin: 2rem;
+    }
+    .content {
+        display: grid;
+        grid-template-columns: 2fr 2fr;
+        align-items: center;
+        gap: 1rem;
+    }
+    .mepeneje img {
+    
+        max-width: 20rem;
+    
+        height: auto;
+        object-fit: cover;
+    
+    }
+    
+    .mensaje {
+        padding: 5rem;
+        grid-column: 1/3;
+        grid-row: 2;
+        margin-top: 5rem;
+        margin-bottom: 5rem;
+    }
+    .mensaje p{
+        font-size: 3rem;
+    }
+    
+}
+
+
+@media only screen and (min-width: 860px){
+    .container {
+        width: 100%;
+        max-width: 60em;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .mepeneje {
+        width: 100%;
+        height: 60rem;
+        max-width: 60rem;
+        border-radius: 2rem;
+        margin: 2rem;
+    }
+    .content {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        align-items: center;
+        gap: 2rem;
+    }
+    .mepeneje img {
+    
+        max-width: 20rem;
+    
+        height: auto;
+        object-fit: cover;
+    
+    }
+    
+    .mensaje {
+        padding: 0 5rem;
+        grid-column: 1/3;
+        grid-row: 2;
+        margin-top: 1rem;
+        margin-bottom: 5rem;
+    }
+    .mensaje p{
+        font-size: 4rem;
+    }
+    
+}
+
+.logo_slime {
+    animation: logo-spin;
+    -webkit-animation: jello-vertical 0.9s both;
+    animation: jello-vertical 0.9s both;
+
+}
+@-webkit-keyframes jello-vertical {
+    0% {
+      -webkit-transform: scale3d(1, 1, 1);
+              transform: scale3d(1, 1, 1);
+    }
+    30% {
+      -webkit-transform: scale3d(0.75, 1.25, 1);
+              transform: scale3d(0.75, 1.25, 1);
+    }
+    40% {
+      -webkit-transform: scale3d(1.25, 0.75, 1);
+              transform: scale3d(1.25, 0.75, 1);
+    }
+    50% {
+      -webkit-transform: scale3d(0.85, 1.15, 1);
+              transform: scale3d(0.85, 1.15, 1);
+    }
+    65% {
+      -webkit-transform: scale3d(1.05, 0.95, 1);
+              transform: scale3d(1.05, 0.95, 1);
+    }
+    75% {
+      -webkit-transform: scale3d(0.95, 1.05, 1);
+              transform: scale3d(0.95, 1.05, 1);
+    }
+    100% {
+      -webkit-transform: scale3d(1, 1, 1);
+              transform: scale3d(1, 1, 1);
+    }
+  }
+  @keyframes jello-vertical {
+    0% {
+      -webkit-transform: scale3d(1, 1, 1);
+              transform: scale3d(1, 1, 1);
+    }
+    30% {
+      -webkit-transform: scale3d(0.75, 1.25, 1);
+              transform: scale3d(0.75, 1.25, 1);
+    }
+    40% {
+      -webkit-transform: scale3d(1.25, 0.75, 1);
+              transform: scale3d(1.25, 0.75, 1);
+    }
+    50% {
+      -webkit-transform: scale3d(0.85, 1.15, 1);
+              transform: scale3d(0.85, 1.15, 1);
+    }
+    65% {
+      -webkit-transform: scale3d(1.05, 0.95, 1);
+              transform: scale3d(1.05, 0.95, 1);
+    }
+    75% {
+      -webkit-transform: scale3d(0.95, 1.05, 1);
+              transform: scale3d(0.95, 1.05, 1);
+    }
+    100% {
+      -webkit-transform: scale3d(1, 1, 1);
+              transform: scale3d(1, 1, 1);
+    }
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    .logo_slime {
+        animation: logo-spin;
+        -webkit-animation: jello-vertical 0.9s both;
+        animation: jello-vertical 0.9s both;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    a:nth-of-type(2) .logo_slime {
+        animation: none;
+    }
+  }

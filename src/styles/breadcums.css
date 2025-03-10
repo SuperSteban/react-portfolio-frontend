@@ -1,19 +1,19 @@
 .breadcrumbs {
     display: flex;
     list-style: none;
-    padding: .2rem;
+    padding: .5rem;
 }
 
 .breadcrumbs li {
     margin-right: .4rem;
+    font-size: 2rem;
 }
 
 .breadcrumbs li a {
     text-decoration: none;
-    color: white;
 }
 .breadcrumbs li a:hover {
-    color: blueviolet;
+    color: rgb(70, 61, 243);
 }
 
 .breadcrumbs li::after {

@@ -1,7 +1,8 @@
 #root {
-  width: 100% !important;
-  text-align: center;
+  width: 100%;
 }
+
+
 
 .logo {
   height: 6em;
@@ -30,10 +31,5 @@
   }
 }
 
-.card {
-  padding: 2em;
-}
 
-.read-the-docs {
-  color: #888;
-}
+

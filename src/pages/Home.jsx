@@ -1,9 +1,8 @@
-
-import "../styles/home-public.css"
 import { useState, useEffect } from "react"
 import axios from "axios"
-
-
+import Hero from "../components/Hero"
+import "../styles/home.css"
+import "../styles/projects.css"
 
 
 
@@ -32,60 +31,56 @@ function Home() {
     };
 
     return (
-        <div className="container">
-            <div className="container-content">
-                <h1>Portfolio</h1>
-            </div>
-            <div className="container-content">
-                <h2>Hello My name is Jorge</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt mollitia labore earum ipsa, tempore quam accusamus facilis eos repellat tempora maxime eius et quo sint placeat.
-                    Soluta illum quod tenetur.</p>
-            </div>
+        <div>
 
-            <div className="container-content">
+            <Hero></Hero>
+
+            <div>
                 <h2>Experience</h2>
                 <ul>
-                    <li><h4>Intership</h4></li>
-                    <li><h5>GCL Mexico</h5></li>
-                    <p>
-                        Developed a web app to administrate part of the process that involves
-                        the ISO certification
-                    </p>
-                    <li><span>2024/02/1~~2024/05/30 </span></li>
+                    <li><p>Intership</p></li>
+                    <li><p>GCL Mexico</p></li>
+                    <li>
+                        <p>
+                            Developed a web app to create a breach between clients and GCL Mexico in the process of their ISO certifications.
+                            Administrate users, projects and audits.
+                        </p>
+                    </li>
+                    <li><span><p>2024/02/1~2024/05/30</p></span></li>
                 </ul>
             </div>
 
+            <div>
 
-
-            <div className="container-content">
-
-                <h2>PROJECTOS</h2>
+                <h3>Projects</h3>
                 {
                     featuredProjects.length < 0 ? (
-                            <p>
-                                There is nothing to show... try later
-                            </p>
-    
-                    ) : (
-                        <div className="container-projects">
-                            {
-                                featuredProjects.map((item) => 
-                                    
-                                    (
+                        <p>
+                            There is nothing to show... try later
+                        </p>
 
-                                        <div key={item.id} className="project-card">
-                                            <h3>{item.title}</h3>
-                                            <img src={item.img} alt={item.title} />
-                                            <p>{item.description}</p>
+                    ) : (
+                        <div className="projects__container">
+                            {
+                                featuredProjects.map((item) =>
+
+                                (
+
+                                    <div key={item.id} className="projects__card">
+
+                                        <img src={item.img} alt={item.title} />
+                                        <div className="info__card">
+                                            <h4>{item.title}</h4>
                                         </div>
-                                    )
-                                    
-        
+                                    </div>
+                                )
+
+
                                 )
                             }
                         </div>
                     )
-                } 
+                }
 
             </div>
         </div>

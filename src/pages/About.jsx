@@ -1,26 +1,30 @@
 import Breadcrumbs from "../components/BreadCumbs"
+import "../styles/about.css"
 function AboutMe() {
 
 
     return (
 
-        <div className="container">
-            <h1>About Me</h1>
-            <Breadcrumbs/>
-            <p className="parrafo">
-                Hola mi nombre es Jorge me gusta construir cosas para darles uso. 
+        <div className="container-section">
+                <h1>About Me</h1>
+                <Breadcrumbs />
+            <div className="content ">
 
-                Me encanta manejar el flujo de datos en los sistemas al igual a como se muestran, estoy en proceso 
-                de especializarme por eso estoy desarrollando proyectos fullstack para saber cual camino es con el que me siento mejor 
+                <img src="/slime_s.svg" alt="me" className="mepeneje logo_slime" />
+                <h2>Hello, I'm Jorge Esteban!
+                I'm from Mexico</h2>
+                <div className="mensaje">
+                    <p>
+                        I love building things. I have a strong desire to create software that delivers positive interactions and impacts real users.
 
-                Por el momento he construido en tecnologias Como 
-            </p>
-            <ul className="lista">
-                <li>Laravel con bases de datos RelacionalesMysql
-                </li>
-                <li>Desarrollado apis con Djgango y consumirlas con React, como en este proyecto</li>
-                <li>Desarrollado apis con Djgango y construido un ambiente para facil despliegue con docker, nginx</li>
-            </ul>
+                        I've worked with stacks like Django, React, and PHP. I'm also planning to explore Golang, and Angular in the future.
+
+                        My goal is to become a great software developer — constantly improving my skills, learning new technologies, and building solutions that make a difference.
+
+                        
+                    </p>
+                </div>
+            </div>
         </div>
     )
 }
