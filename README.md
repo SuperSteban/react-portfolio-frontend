@@ -1,8 +1,20 @@
-# React + Vite
+# React PORTFOLIO
+- Protected routes
+- css
+- React Dom
+## Public routes
+### HOME
+![localhost_5173_](https://github.com/user-attachments/assets/426844e4-ad17-4dd5-9c0b-4ddcb06a3a76)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### About
+![about](https://github.com/user-attachments/assets/16736d52-8ee7-4987-9272-6a34a72f7e58)
 
-Currently, two official plugins are available:
+### Blog
+![localhost_5173_blogs](https://github.com/user-attachments/assets/7ce1c223-19bb-46a5-8c6e-aa675c5c7eba)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Search 
+![searchlist](https://github.com/user-attachments/assets/04596973-284e-466c-b52e-1f9a837dc32f)
+
+## Protected
+### Login
+![image](https://github.com/user-attachments/assets/c1d722a1-1fbe-4e46-9280-118de0b049ac)
